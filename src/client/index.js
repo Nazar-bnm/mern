@@ -1,19 +1,10 @@
-if (process.env.NODE_ENV === 'production') {
-  console.log('__Production Mode');
-}
+import React from 'react';
+import { render } from 'react-dom';
 
-if (process.env.NODE_ENV === 'development') {
-  console.log('__Development Mode');
-}
+import App from './App';
 
-const body = document.querySelector('body');
-const button = document.createElement('button');
+import './styles/styles.css';
 
-button.addEventListener('click', () => {
-  fetch('/api/getUsername')
-    .then(res => res.json())
-    .then(user => console.log('user', user));
-});
-button.innerText = 'get User data';
+const ROOT = document.getElementById('root');
 
-body.appendChild(button);
+render(<App />, ROOT);
