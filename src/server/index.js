@@ -1,16 +1,13 @@
-const path = require('path');
 const express = require('express');
-
-const CUR_DIR = __dirname;
-const HTML_FILE = path.resolve(CUR_DIR, '../client/index.html');
+const os = require('os');
 
 const app = express();
 
-app.get('*', (req, res) => {
-  res.sendFile(HTML_FILE)
-});
+app.use(express.static('dist'));
 
-const PORT = process.env.PORT || 3000;
+app.get('/api/getUsername', (req, res) => res.send({ user: os.userInfo() }));
+
+const PORT = process.env.PORT || 8080;
 
 app.listen(PORT, () => {
   console.log(`Listening on port ${PORT}`);
