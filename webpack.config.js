@@ -7,6 +7,7 @@ module.exports = {
     path: path.join(__dirname, 'dist'),
     filename: '[name].js'
   },
+  mode: 'development',
   module: {
     rules: [{
       test: /\.(js|jsx)$/,
