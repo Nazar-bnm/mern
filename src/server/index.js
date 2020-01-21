@@ -1,15 +1,15 @@
 import express from 'express';
 import path from 'path';
-import os from 'os';
 import webpack from 'webpack';
 import webpackDevMiddleware from 'webpack-dev-middleware';
 import webpackHotMiddleware from 'webpack-hot-middleware';
 
 import config from '../../webpack.config';
+import router from './routers';
 
 const app = express();
 
-app.get('/api/getUsername', (req, res) => res.send({ user: os.userInfo() }));
+app.use('/api', router);
 
 if (process.env.NODE_ENV === 'development') {
   const compiler = webpack(config);
