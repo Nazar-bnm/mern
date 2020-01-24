@@ -1,6 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 /**
  * Images larger than 10 KB won’t be inlined
@@ -49,6 +50,9 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: '[name].[hash].css',
       chunkFilename: '[id].[hash].css'
-    })
+    }),
+    new CopyWebpackPlugin([
+      { from: './src/client/assets/static', to: './' }
+    ])
   ]
 };
