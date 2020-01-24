@@ -19,13 +19,13 @@ module.exports = {
       }
     },
     {
-      test: /\.css$/,
-      use: ['style-loader', 'css-loader']
+      test: /\.(scss|css)$/,
+      use: ['style-loader', 'css-loader', 'sass-loader']
     },
-      {
-        test: /\.(jpg|png|woff|woff2|eot|ttf|svg)$/,
-        use: ['file-loader']
-      }]
+    {
+      test: /\.(jpg|png|woff|woff2|eot|ttf|svg)$/,
+      use: ['file-loader']
+    }]
   },
   resolve: {
     extensions: ['*', '.js', 'jsx']
