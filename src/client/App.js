@@ -30,7 +30,7 @@ export default class App extends Component {
         {user ? <h1>{`Hello ${user.username}`}</h1> : <h1>Loading.. please wait!</h1>}
         <img src={Storm} alt="storm" />
         <Counter test="test props" />
-        <button onClick={this.callAPI}>Call</button>
+        <button onClick={this.callAPI}>Call API</button>
       </div>
     );
   }

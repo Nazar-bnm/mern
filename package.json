@@ -5,10 +5,10 @@
   "main": "index.js",
   "scripts": {
     "clean": "rm -rf dist",
-    "client": "webpack-dev-server --mode development",
-    "build": "webpack --mode production",
-    "dev": "npm run clean && npm run server:dev && npm run start & npm run client",
-    "prod": "npm run clean && npm run build && npm run server:prod",
+    "dev": "npm run clean && npm run server:dev && npm run start & npm run client:dev",
+    "prod": "npm run clean && npm run client:prod && npm run server:prod",
+    "client:dev": "webpack-dev-server --mode development --config webpack.dev.config.js",
+    "client:prod": "webpack --mode production --config webpack.prod.config.js",
     "server:dev": "webpack --mode development --config webpack.server.config.js",
     "server:prod": "webpack --mode production --config webpack.server.config.js",
     "start": "nodemon ./dist/server.js"
