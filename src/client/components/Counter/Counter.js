@@ -22,4 +22,4 @@ export const Counter = ({ test }) => {
       <button type="button" onClick={() => setCounter(counter - 1)}>Decrease</button>
     </div>
   );
-}
+};
