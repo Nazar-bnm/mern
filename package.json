@@ -1,7 +1,7 @@
 {
   "name": "mern",
   "version": "1.0.0",
-  "description": "",
+  "description": "Boilerplate to build a full stack web application using React, Node.js, Express and Webpack.",
   "main": "index.js",
   "scripts": {
     "clean": "rm -rf dist",
@@ -15,8 +15,15 @@
     "lint": "./node_modules/.bin/eslint ./"
   },
   "keywords": [],
-  "author": "",
+  "author": "Nazar Bulych",
   "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Nazar-bnm/mern"
+  },
+  "engines": {
+    "node": ">=12.14"
+  },
   "dependencies": {
     "express": "^4.17.1",
     "react": "^16.12.0",
